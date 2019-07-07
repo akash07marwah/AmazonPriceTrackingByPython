@@ -2,7 +2,7 @@
 
 It is a Python Script for tracking Amazon Prices, it notifies you when the price of your amazon item is less than your desired price.
 
-#Initialisation
+# Initialization
 
 1. Clone this reposiory in the folder of your choice.
 2. Open the file and put the URL of your item from Amazon,put the desired price, the email, email password and put the no. of      times to check the price in a day in respective variables.
