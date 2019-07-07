@@ -6,9 +6,10 @@ import time
 
 URL = 'https://www.amazon.in/gp/product/1119576156/ref=ox_sc_act_title_9?smid=A1S46CEHK621UY&psc=1'
 desired_price = 3500
-time_interval = 1
+times = 1440
 
 #############################################################
+time_interval=86400/times
 converted_price=0
 headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'  }
 def check_price():
@@ -56,4 +57,4 @@ def send_mail():
 while(True):
         check_price()
         global time_interval
-        time.sleep(60*time_interval)
+        time.sleep(time_interval)
