@@ -4,10 +4,11 @@ import smtplib
 import time
 #############################################################
 
-URL = 'https://www.amazon.in/gp/product/1119576156/ref=ox_sc_act_title_9?smid=A1S46CEHK621UY&psc=1'
-desired_price = 3500
-times = 1440
-
+URL = 'YOUR_PRODUCT_LINK'
+desired_price = 0
+times = 1
+email = 'YOUR_EMAIL_ID'
+email_password = 'YOUR_EMAIL_PASSWORD'
 #############################################################
 time_interval=86400/times
 converted_price=0
@@ -37,16 +38,16 @@ def send_mail():
     server.ehlo()
     server.starttls()
     server.ehlo()
-
-    server.login('akashmarwah07@gmail.com','stupid-string-egan')
+    global email_password
+    server.login(email,email_password)
 
     subject = 'Price fell down to {converted_price}'
     body = "Check the Amazon link https://www.amazon.in/gp/product/1119576156/ref=ox_sc_act_title_9?smid=A1S46CEHK621UY&psc=1"
 
     msg = "Subject:Price fell down to "+ str(converted_price)  +"\n\n Check the Amazon link https://www.amazon.in/gp/product/1119576156/ref=ox_sc_act_title_9?smid=A1S46CEHK621UY&psc=1"
     server.sendmail(
-        'akashmarwah07@gmail.com',
-        'akashmarwah07@gmail.com',
+        email,
+        email,
         msg
     )    
     print('Email Sent')
